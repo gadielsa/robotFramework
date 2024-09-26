@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-09-24T14:19:24.461213" rpa="false" schemaversion="5">
+<suite id="s1" name="amazonTestes" source="C:\cursoUdemy\robotFramework\webTesting\amazonTestes.robot">
+<test id="s1-t1" name="Caso de Teste 01 - Acesso ao menu &quot;Eletrônicos&quot;" line="8">
+<kw name="Abrir o navegador" owner="amazonResources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-24T14:19:24.643000" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-24T14:19:24.643000" elapsed="1.881627"/>
+</kw>
+<status status="PASS" start="2024-09-24T14:19:24.643000" elapsed="1.881627"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br">
+<msg time="2024-09-24T14:19:26.527624" level="FAIL">No keyword with name 'Acessar a home page do site Amazon.com.br' found.</msg>
+<status status="FAIL" start="2024-09-24T14:19:26.527624" elapsed="0.000000">No keyword with name 'Acessar a home page do site Amazon.com.br' found.</status>
+</kw>
+<kw name="Entrar no menu &quot;Eletrônicos&quot;">
+<status status="NOT RUN" start="2024-09-24T14:19:26.527624" elapsed="0.000000"/>
+</kw>
+<kw name="Verificar se o título da página fica &quot;Eletrônicos e Tecnologia | Amazon.com.br&quot;">
+<status status="NOT RUN" start="2024-09-24T14:19:26.527624" elapsed="0.000000"/>
+</kw>
+<kw name="Verificar se aparece a frase &quot;Eletrônicos e Tecnologia&quot;">
+<status status="NOT RUN" start="2024-09-24T14:19:26.527624" elapsed="0.000000"/>
+</kw>
+<kw name="Verificar se aparece a categoria &quot;Computadores e Informática&quot;">
+<status status="NOT RUN" start="2024-09-24T14:19:26.528624" elapsed="0.000000"/>
+</kw>
+<kw name="Fechar o navegador" owner="amazonResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-24T14:19:26.528624" elapsed="2.121806"/>
+</kw>
+<status status="PASS" start="2024-09-24T14:19:26.528624" elapsed="2.122923"/>
+</kw>
+<doc>Esse teste verifica o menu eletrônicos do site da Amazon.com.br
+e verifica a categoria Computadores e Informática</doc>
+<tag>categorias</tag>
+<tag>menus</tag>
+<status status="FAIL" start="2024-09-24T14:19:24.642043" elapsed="4.009504">No keyword with name 'Acessar a home page do site Amazon.com.br' found.</status>
+</test>
+<test id="s1-t2" name="Caso de teste 02 - Pesquisa de um produto" line="18">
+<kw name="Abrir o navegador" owner="amazonResources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-24T14:19:28.656469" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-24T14:19:28.656469" elapsed="1.624179"/>
+</kw>
+<status status="PASS" start="2024-09-24T14:19:28.655538" elapsed="1.626101"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br">
+<msg time="2024-09-24T14:19:30.284644" level="FAIL">No keyword with name 'Acessar a home page do site Amazon.com.br' found.</msg>
+<status status="FAIL" start="2024-09-24T14:19:30.283649" elapsed="0.000995">No keyword with name 'Acessar a home page do site Amazon.com.br' found.</status>
+</kw>
+<kw name="Digitar o nome de produto &quot;Xbox Series S&quot; no campo de pesquisa">
+<status status="NOT RUN" start="2024-09-24T14:19:30.285191" elapsed="0.000000"/>
+</kw>
+<kw name="Clicar no botão de pesquisa">
+<status status="NOT RUN" start="2024-09-24T14:19:30.285191" elapsed="0.000000"/>
+</kw>
+<kw name="Verificar o resultado da pesquisa se está listando o produto pesquisado">
+<status status="NOT RUN" start="2024-09-24T14:19:30.286242" elapsed="0.000000"/>
+</kw>
+<kw name="Fechar o navegador" owner="amazonResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-24T14:19:30.287290" elapsed="2.119255"/>
+</kw>
+<status status="PASS" start="2024-09-24T14:19:30.286242" elapsed="2.120303"/>
+</kw>
+<doc>Esse teste verifica a busca de um produto</doc>
+<tag>busca_produtos</tag>
+<tag>lista_da_busca</tag>
+<status status="FAIL" start="2024-09-24T14:19:28.654469" elapsed="3.753377">No keyword with name 'Acessar a home page do site Amazon.com.br' found.</status>
+</test>
+<doc>Essa suíte testa o site da Amazon.com.br</doc>
+<status status="FAIL" start="2024-09-24T14:19:24.463232" elapsed="7.947636"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">busca_produtos</stat>
+<stat pass="0" fail="1" skip="0">categorias</stat>
+<stat pass="0" fail="1" skip="0">lista_da_busca</stat>
+<stat pass="0" fail="1" skip="0">menus</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="amazonTestes">amazonTestes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
