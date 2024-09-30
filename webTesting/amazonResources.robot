@@ -23,3 +23,9 @@ Entrar no menu "Eletrônicos"
 
 Verificar se aparece a frase "Eletrônicos e Tecnologia"
     Wait Until Page Contains    text=${TXT_HEADER_ELETRONICOS}
+
+Verificar se o título da página fica "${TITULO}"
+    Title Should Be    title=${TITULO}
+
+Verificar se aparece a categoria "${NOME_CATEGORIA}"
+    Element Should Not Be Visible    locator=//a[@aria-label='${NOME_CATEGORIA}']
