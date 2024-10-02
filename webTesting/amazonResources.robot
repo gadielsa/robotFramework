@@ -5,8 +5,12 @@ Library    SeleniumLibrary
 ${URL}    https://www.amazon.com.br
 ${MENU_ELETRONICOS}    //a[@href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&node=16209062011&ref_=nav_cs_electronics'][contains(.,'Eletrônicos')]
 ${TXT_HEADER_ELETRONICOS}    Eletrônicos e Tecnologia
-${BARRA_DE_PESQUISA}    twotabsearchtextbox
-${BOTAO_DE_PESQUISA}    nav-search-submit-button
+${ELETRONICOS}               //span[@class='nav-a-content'][contains(.,'Eletrônicos')]
+${BARRA_DE_PESQUISA}         twotabsearchtextbox
+${BOTAO_DE_PESQUISA}         nav-search-submit-button
+${IMG_XBOX}                  //img[contains(@alt,'Console Xbox Series S')]
+${ADICIONAR_AO_CARRINHO}     //input[contains(@name,'submit.add-to-cart')]
+${VALOR_CARRINHO}            sw-subtotal-item-count
 
 *** Keywords ***
 Abrir o navegador
@@ -32,8 +36,8 @@ Verificar se aparece a frase "Eletrônicos e Tecnologia"
 Verificar se o título da página fica "${TITULO}"
     Title Should Be    title=${TITULO}
 
-Verificar se aparece a categoria "${NOME_CATEGORIA}"
-    Element Should Not Be Visible    locator=//a[@aria-label='${NOME_CATEGORIA}']
+Verificar se aparece Eletrônicos
+    Element Should Be Visible    locator=${ELETRONICOS}
 
 #Caso de teste 02
 
@@ -45,6 +49,16 @@ Clicar no botão de pesquisa
 
 Verificar o resultado da pesquisa se está listando "${PRODUTO}"
     Wait Until Element Is Visible    locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${PRODUTO}')]
+
+#Caso de teste 03
+
+Adicionar o produto "Console Xbox Series S" no carrinho
+    Click Element    locator=${IMG_XBOX}
+    Click Element    locator=${ADICIONAR_AO_CARRINHO}
+
+Verificar se o produto "${PRODUTO}" foi adicionado com sucesso
+    Wait Until Element Is Visible    locator=${VALOR_CARRINHO}
+    Element Should Be Visible    locator=//span[@class='a-size-base'][contains(.,'${PRODUTO}')]
 
 #Gherkin Steps
 #Caso de teste 01
@@ -61,8 +75,8 @@ Então o título da página deve ficar "Eletrônicos e Tecnologia | Amazon.com.b
 E o texto "Eletrônicos e Tecnologia" deve ser exibido na página
     Verificar se aparece a frase "Eletrônicos e Tecnologia"
 
-E a categoria "Computadores e Informática" deve ser exibida na página
-    Verificar se aparece a categoria "Computadores e Informática"
+E eletrônicos deve ser exibida na página
+    Verificar se aparece Eletrônicos
 
 #Caso de teste 02
 
