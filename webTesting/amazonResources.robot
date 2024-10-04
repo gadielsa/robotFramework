@@ -11,6 +11,10 @@ ${BOTAO_DE_PESQUISA}         nav-search-submit-button
 ${IMG_XBOX}                  //img[contains(@alt,'Console Xbox Series S')]
 ${ADICIONAR_AO_CARRINHO}     //input[contains(@name,'submit.add-to-cart')]
 ${VALOR_CARRINHO}            sw-subtotal-item-count
+${ACESSAR_CARRINHO}          //a[@id='nav-cart']
+${TITULO_CARRINHO}           //title[@dir='ltr'][contains(.,'Carrinho de compras da Amazon.com')]
+${SELECIONAR_QUANTIDADE}     //span[@class='a-button-text a-declarative'][contains(.,'Qtd:1')]
+${EXCLUIR}                   //a[@tabindex='-1'][contains(@id,'0')][contains(.,'0 (Excluir)')]
 
 *** Keywords ***
 Abrir o navegador
@@ -60,6 +64,17 @@ Verificar se o produto "${PRODUTO}" foi adicionado com sucesso
     Wait Until Element Is Visible    locator=${VALOR_CARRINHO}
     Element Should Be Visible    locator=//span[@class='a-size-base'][contains(.,'${PRODUTO}')]
 
+    #Caso de teste 04
+
+Remover o produto "${PRODUTO}" do carrinho
+    Click Element    locator=${ACESSAR_CARRINHO}
+    Wait Until Element Is Visible    locator=${TITULO_CARRINHO}
+    Click Element    locator=${SELECIONAR_QUANTIDADE}
+    Click Element    locator=${EXCLUIR}
+
+Verificar se o carrinho fica vazio
+    Element Should Be Visible    locator=//h2[@class='a-size-extra-large a-spacing-mini a-spacing-top-base a-text-normal'][contains(.,'Seu carrinho de compras da Amazon está vazio.')]
+
 #Gherkin Steps
 #Caso de teste 01
 
@@ -89,3 +104,15 @@ Então o título da página deve ficar "Amazon.com.br : Xbox Series S"
         
 E um produto da linha "Xbox Series S" deve ser mostrado na página
     Verificar o resultado da pesquisa se está listando "Xbox Series S"
+
+#Caso de teste 03
+
+Então adicione o produto da linha "Xbox Series S" ao carrinho
+    Adicionar o produto "Console Xbox Series S" no carrinho
+
+E um produto da linha "Xbox Series S" deve ser mostrado no carrinho
+    Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
+
+#Caso de teste 04
+
+
