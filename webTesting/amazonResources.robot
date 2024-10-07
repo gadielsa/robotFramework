@@ -107,12 +107,16 @@ E um produto da linha "Xbox Series S" deve ser mostrado na página
 
 #Caso de teste 03
 
-Então adicione o produto da linha "Xbox Series S" ao carrinho
+Quando adicionar o produto "Console Xbox Series S" no carrinho
     Adicionar o produto "Console Xbox Series S" no carrinho
 
-E um produto da linha "Xbox Series S" deve ser mostrado no carrinho
+Então o produto "Console Xbox Series S" deve ser mostrado no carrinho
     Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
 
 #Caso de teste 04
 
+Quando remover o produto "Console Xbox Series S" do carrinho
+    Remover o produto "Console Xbox Series S" do carrinho
 
+Então o carrinho deve ficar vazio
+    Verificar se o carrinho fica vazio
